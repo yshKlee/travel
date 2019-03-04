@@ -21,24 +21,10 @@
 <script>
 export default {
   name: 'HomeRecommend',
+  props: { list: Array },
   data () {
     return {
-      list: [{
-        id: 1,
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/59/569d3c096e542502.png',
-        title: 'qqq',
-        desc: 'www'
-      }, {
-        id: 2,
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/59/569d3c096e542502.png',
-        title: 'qqq',
-        desc: 'www'
-      }, {
-        id: 3,
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/59/569d3c096e542502.png',
-        title: 'qqq',
-        desc: 'www'
-      }]
+
     }
   }
 }

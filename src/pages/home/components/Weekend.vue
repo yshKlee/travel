@@ -21,27 +21,9 @@
 <script>
 export default {
   name: 'HomeWeekend',
+  props: { list: Array },
   data () {
     return {
-      list: [
-        {
-          'id': '0003',
-          'imgUrl': 'http://img1.qunarzz.com/sight/source/1811/52/b6776b49d27025.jpg_r_640x214_35ae205c.jpg',
-          'desc': '必游榜单',
-          'title': 'aaa'
-        }, {
-          'id': '0004',
-          'imgUrl': 'http://img1.qunarzz.com/sight/source/1811/52/b6776b49d27025.jpg_r_640x214_35ae205c.jpg',
-          'desc': '必游榜单',
-          'title': 'aaa'
-        },
-        {
-          'id': '0005',
-          'imgUrl': 'http://img1.qunarzz.com/sight/source/1811/52/b6776b49d27025.jpg_r_640x214_35ae205c.jpg',
-          'desc': '必游榜单',
-          'title': 'aaa'
-        }
-      ]
     }
   }
 }
