@@ -1,13 +1,63 @@
 <template>
-  <div class="list">
-    <div class="area"></div>
-    <div class="area"></div>
-    <div class="area"></div>
+  <div class="list"
+       ref="wapper">
+    <div>
+      <div class="area">
+        <div class="title border-topbottom">当前城市</div>
+        <div class="button-list">
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
+        </div>
+      </div>
+      <div class="area">
+        <div class="title border-topbottom">热门城市</div>
+        <div class="button-list">
+          <div class="button-wrapper"
+               v-for="(item) in hot"
+               :key="item.id">
+            <div class="button">{{item.name}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="area"
+           v-for="(item, key) of cities"
+           :key="key"
+           :ref="'letter-'+key">
+        <div class="title border-topbottom">{{key}}</div>
+        <div class="item-list">
+          <div class="item"
+               v-for="(it) in item"
+               :key="it.id">{{it.name}}</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
+import Bscroll from 'better-scroll'
 export default {
-  name: 'CityList'
+  name: 'CityList',
+  props: {
+    hot: Array,
+    cities: Object,
+    letter: String
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.wapper)
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        const letterRef = 'letter-' + this.letter
+        const element = this.$refs[letterRef][0]
+        this.scroll.scrollToElement(element)
+        // console.log(element)
+        // console.log('letterchange', this.letter)
+        // console.log(this.$refs)
+      }
+    }
+  }
 }
 </script>
 <style lang="stylus" scoped>
