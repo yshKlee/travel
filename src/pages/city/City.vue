@@ -1,7 +1,7 @@
 <template>
   <div>
     <city-header></city-header>
-    <city-search></city-search>
+    <city-search :cities="cities"></city-search>
     <city-list :cities="cities"
                :hot="hotCities"
                :letter="letter"></city-list>
@@ -27,6 +27,7 @@ export default {
   },
   methods: {
     getCityInfo () {
+      // axios.get('/travel/static/mock/city.json').then(this.getCityInfoSucc)
       axios.get('/api/city.json').then(this.getCityInfoSucc)
     },
     getCityInfoSucc (res) {
